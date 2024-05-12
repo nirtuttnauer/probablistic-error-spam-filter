@@ -9,7 +9,7 @@ The Probabilistic Error Spam Filter is an advanced data structure project design
 To install and run this project, clone the repository to your local machine and ensure you have Python installed.
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/nirtuttnauer/probablistic-error-spam-filter.git
 cd probablistic-error-spam-filter
 ```
 
