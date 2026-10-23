@@ -26,7 +26,7 @@ def test_spam_filter(num = 3, PRINT=False):
         email_addresses.add(str(random.randint(100000000, 999999999)) + "@example.com")
 
     # Populate the spam list with 100 addresses
-    spam_addresses = random.sample(email_addresses, 100)
+    spam_addresses = random.sample(sorted(email_addresses), 100)
     for address in spam_addresses:
         filter_system.add_spam(address)
         email_addresses.remove(address)
@@ -46,7 +46,7 @@ def test_spam_filter(num = 3, PRINT=False):
         print("---------------------Results---------------------")
         print(f"Number of false positives: {false_positives}")
         print("-------------------------------------------------")
-        print(f"Passed The Error Limit With Minimal Space? {false_positives//(len(email_addresses)+1) < 0.001}")
+        print(f"Passed The Error Limit With Minimal Space? {false_positives / len(email_addresses) < 0.001}")
         print("-------------------------------------------------")
     if PRINT: 
         filter_system.bloom_filter.print_bit_array()
